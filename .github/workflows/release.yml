@@ -1,0 +1,75 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  release:
+    name: Create release from manifest version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Fetch latest release
+        id: fetch_latest_release
+        uses: thebritican/fetch-latest-release@v2.0.0
+        continue-on-error: true
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Compare current version with fetched latest release
+        id: compare_versions
+        continue-on-error: true
+        env:
+          LATEST_RELEASE: ${{ steps.fetch_latest_release.outputs.tag_name }}
+        run: |
+          python -c \
+          """
+          import ast
+          import os
+
+          with open('__manifest__.py', 'r') as f:
+              data = f.read()
+
+          current_version = tuple(map(int, ast.literal_eval(data)['version'].split('.')))
+          if len(current_version) > 3:
+              current_version = current_version[2:]
+
+          new_version = 'v' + '.'.join(map(str, (i for i in current_version)))
+          new_release_flag = False
+
+          latest_release = os.getenv('LATEST_RELEASE')
+          if isinstance(latest_release, str) and latest_release != '':
+              latest_release = tuple(map(int, latest_release.strip('v').split('.')))
+              if current_version > latest_release:
+                  # if a prior release exists, and it is smaller than the specified on the
+                  # manifest, create a new release
+                  new_release_flag = True
+          else:
+              if current_version > (0, 0, 0):
+                  # if no prior release exists, and it is not 0, create a new one with the
+                  # version specified on the manifest
+                  new_release_flag = True
+
+          if new_release_flag:
+              os.system(f'echo NEW_VERSION={new_version} >> $GITHUB_ENV')
+          """
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        if: ${{ env.NEW_VERSION }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.NEW_VERSION }}
+          release_name: ${{ env.NEW_VERSION }}
+          draft: false
+          prerelease: false
