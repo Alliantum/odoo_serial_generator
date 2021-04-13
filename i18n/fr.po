@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-13 14:43+0000\n"
-"PO-Revision-Date: 2021-04-13 14:43+0000\n"
+"POT-Creation-Date: 2021-04-13 14:58+0000\n"
+"PO-Revision-Date: 2021-04-13 14:58+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,106 +21,106 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:odoo_serials.view_picking_form_serials
 #: model_terms:ir.ui.view,arch_db:odoo_serials.view_stock_move_operations_serials
 msgid "Assign Serial Numbers"
-msgstr ""
+msgstr "Attribuer des numéros de série"
 
 #. module: odoo_serials
 #: model_terms:ir.ui.view,arch_db:odoo_serials.view_assign_serial_numbers
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #. module: odoo_serials
 #: model:ir.model.fields,field_description:odoo_serials.field_stock_assign_serial__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 #. module: odoo_serials
 #: model:ir.model.fields,field_description:odoo_serials.field_stock_assign_serial__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 #. module: odoo_serials
 #: code:addons/odoo_serials/models/stock_move.py:35
 #, python-format
 msgid "Detailed Operations"
-msgstr ""
+msgstr "Opérations détaillées"
 
 #. module: odoo_serials
 #: model:ir.model.fields,field_description:odoo_serials.field_stock_move__display_assign_serial
 msgid "Display Assign Serial"
-msgstr ""
+msgstr "Affectation de l'affichage Série"
 
 #. module: odoo_serials
 #: model:ir.model.fields,field_description:odoo_serials.field_stock_assign_serial__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom affiché"
 
 #. module: odoo_serials
 #: model:ir.model.fields,field_description:odoo_serials.field_stock_assign_serial__next_serial_number
 #: model:ir.model.fields,field_description:odoo_serials.field_stock_move__next_serial
 msgid "First SN"
-msgstr ""
+msgstr "Premier SN"
 
 #. module: odoo_serials
 #: model:ir.model.fields,field_description:odoo_serials.field_stock_assign_serial__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: odoo_serials
 #: model:ir.model.fields,field_description:odoo_serials.field_stock_assign_serial____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Dernière modification le"
 
 #. module: odoo_serials
 #: model:ir.model.fields,field_description:odoo_serials.field_stock_assign_serial__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière mise à jour par"
 
 #. module: odoo_serials
 #: model:ir.model.fields,field_description:odoo_serials.field_stock_assign_serial__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
 
 #. module: odoo_serials
 #: model:ir.model.fields,field_description:odoo_serials.field_stock_assign_serial__move_id
 msgid "Move"
-msgstr ""
+msgstr "Mouvement"
 
 #. module: odoo_serials
 #: model:ir.model.fields,field_description:odoo_serials.field_stock_assign_serial__next_serial_count
 #: model:ir.model.fields,field_description:odoo_serials.field_stock_move__next_serial_count
 msgid "Number of SN"
-msgstr ""
+msgstr "Nombre de SN"
 
 #. module: odoo_serials
 #: model:ir.model.fields,field_description:odoo_serials.field_stock_assign_serial__product_id
 msgid "Product"
-msgstr ""
+msgstr "Article"
 
 #. module: odoo_serials
 #: model:ir.model,name:odoo_serials.model_stock_assign_serial
 msgid "Stock Assign Serial Numbers"
-msgstr ""
+msgstr "Numéro de série attribué par le stock"
 
 #. module: odoo_serials
 #: model:ir.model,name:odoo_serials.model_stock_move
 msgid "Stock Move"
-msgstr ""
+msgstr "Mouvement de stock"
 
 #. module: odoo_serials
 #: code:addons/odoo_serials/wizards/stock_assign_serial_numbers.py:30
 #, python-format
 msgid "The number of Serial Numbers to generate must greater than zero."
-msgstr ""
+msgstr "Le nombre de numéros de série à générer doit être supérieur à zéro."
 
 #. module: odoo_serials
 #: code:addons/odoo_serials/models/stock_move.py:92
 #, python-format
 msgid "The serial number must contain at least one digit."
-msgstr ""
+msgstr "Le numéro de série doit contenir au moins un chiffre."
 
 #. module: odoo_serials
 #: code:addons/odoo_serials/models/stock_move.py:77
 #, python-format
 msgid "You need to set a Serial Number before generating more."
-msgstr ""
+msgstr "Vous devez définir un numéro de série avant d'en générer d'autres."
 
