@@ -26,7 +26,7 @@ class StockMove(models.Model):
         # different views to display one field or another so that the webclient doesn't have to
         # fetch both.
         if self.picking_id.picking_type_id.show_reserved:
-            view = self.env.ref('odoo_serials.view_stock_move_operations_serials')
+            view = self.env.ref('odoo_serial_generator.view_stock_move_operations_serials')
         else:
             view = self.env.ref('stock.view_stock_move_nosuggest_operations')
 
@@ -122,7 +122,7 @@ class StockMove(models.Model):
     def action_assign_serial(self):
         """Opens a wizard to assign SN's name on each move lines."""
         self.ensure_one()
-        action = self.env.ref('odoo_serials.act_assign_serial_numbers').read()[0]
+        action = self.env.ref('odoo_serial_generator.act_assign_serial_numbers').read()[0]
         action['context'] = {
             'default_product_id': self.product_id.id,
             'default_move_id': self.id,
